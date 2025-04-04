@@ -19,6 +19,7 @@ public class TaskController {
         return taskService.createTask(task);
     }
 
+    //viewing assigned tasks to a role
     @GetMapping("/assigned/{userId}")
     public List<Task> getTasks(@PathVariable Long userId) {
         return taskService.getTasksByUser(userId);
