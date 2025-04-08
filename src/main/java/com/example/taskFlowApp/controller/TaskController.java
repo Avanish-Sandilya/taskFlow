@@ -13,13 +13,13 @@ public class TaskController {
     @Autowired
     private TaskService taskService;
 
-    //creation of task
+
     @PostMapping("/create")
     public Task createTask(@RequestBody Task task) {
         return taskService.createTask(task);
     }
 
-    //viewing assigned tasks to a role
+
     @GetMapping("/assigned/{userId}")
     public List<Task> getTasks(@PathVariable Long userId) {
         return taskService.getTasksByUser(userId);
